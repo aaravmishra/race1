@@ -1,0 +1,285 @@
+*{
+        margin: 0;
+        padding: 0;
+        border:0;
+        overflow-x: hidden;
+}
+ /* Typeography */
+
+h1{
+        color:#fff !important;
+        overflow: hidden;}
+ /* Menubar */
+ .btn-down{
+        height:50px;
+        width:50px;
+        background:rgba(0,0,0,.7);
+        border-radius: 50%;
+        /* border:1px solid #ccc ; */
+        color:#fff ;
+        position: absolute;
+        left:calc(100% - 51%);
+        bottom:50px;
+        z-index: 5;
+        cursor: pointer;
+        box-shadow: 0 0 3px #ccc;
+        
+ }
+
+.btn-toggle{
+        position: fixed;
+        left: 3%;top:5%;
+        z-index: 1060;
+}
+.btn-toggle:hover{
+        cursor: pointer;
+}
+.btn-toggle span{
+        background: rgb(243, 243, 243);
+        width:25px;
+        height: 3px;
+        display: block;
+        margin: 3px 0px;
+        
+}
+.sidebar.active{
+        left: 0px;
+        transition-duration: 600ms;
+}
+/* menu */
+
+.menu{
+        position: fixed;
+        z-index: 999;
+        background: #000;
+        height:50vw;
+        width:100%;
+        display: none;
+        transition-duration: 1200ms;
+
+}
+
+.menu-container{
+       padding-top:2em;
+        width:60%;
+        margin:auto;
+
+}
+.menu-list{
+        list-style: none;
+        width:40%;
+        min-height:200px;
+        position: relative;
+        margin:auto;
+        /* border:1px solid #fff; */
+        margin-top:calc(100% - 80%);
+        padding:20px;
+        padding-top: 35px;
+        overflow: hidden;
+}
+.menu-list::before{
+        content:'';
+        background:none;
+        border-top:2px solid #fff;
+        border-left:2px solid #fff;
+        width: 235px;
+        min-height: 180px;
+        animation-name: border1;
+        animation-duration: 1s;
+        position: absolute;
+        left: 26px;
+        top:20px;
+}
+.menu-list::after{
+       content:'';
+       background:none;
+       border-bottom:2px solid #fff;
+       border-right:2px solid #fff;
+       width: 235px;
+       min-height: 180px;
+       animation-name: border1;
+       animation-duration: 1s;
+       position: absolute;
+       right: 16px;
+    bottom: 2px;
+}
+
+.menu-list-item{
+       
+       -webkit-filter: blur(0px); /* Safari 6.0 - 9.0 */
+       filter: blur(0px);
+       animation-name: example;
+       animation-duration: 1s;
+       font-size:30px;
+       font-weight: bold;
+       text-align: center;
+}
+.menu-list-item a{
+       text-decoration: none;
+       color:#fff;
+}
+/* The animation code */
+@keyframes example {
+       from {filter: blur(100px);}
+       to {filter: blur(0px);}
+}
+/* The animation code */
+@keyframes border1 {
+       from {
+               width:0%;
+               min-height:0%;
+       }
+       to {
+               width:235px;
+               min-height:180px;
+       }
+}
+ 
+ /* blocks */
+.block{
+        width:100vw;
+        height:50vw;
+        position: relative;
+        /* background-position-x: 300px !important; */
+        background-size: 80%;
+        background-position: 0 100px;
+        background-repeat: no-repeat;
+}
+.content{
+        width:70%;
+        position: absolute;
+        top:25%;
+        padding-left: 50px;
+        left:40%;
+        min-height: 300px;
+        text-align: left;
+
+}
+.content h1{
+	font-size:60px;
+}
+.content h2{
+        font-size: 40px;
+}
+.green-arrow{
+        position: relative;
+        left:0;top:30px;
+}
+.green-arrow:hover{
+        left:5px;
+        animation-name: move 1s infinite;
+        animation-duration: 0.5s;
+        cursor: pointer;
+}
+@keyframes move{
+        from { left:0;}
+        to {left:5px;}
+}
+#block1{
+        background:rgb(156, 51, 51) 
+        url('images/home1.jpg');
+}
+#block2{
+        background:rgb(226, 206, 26) 
+        url('../images/home3.jpg');
+}
+#block3{
+        background:rgb(211, 17, 66) 
+        url('https://images.unsplash.com/photo-1534202238902-1e1e534b4dab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80');
+}
+#block4{
+        background:rgb(76, 211, 117) 
+        url('https://ucarecdn.com/8f67f59e-2aff-42a5-8e42-ef840bb46a5a/-/format/auto/-/stretch/off/-/resize/3000x/-/quality/lighter/');
+}
+#block5{
+        background:rgb(226, 59, 185) 
+        url('../images/');
+}
+
+
+/* footer  */
+
+.footer{
+        width:100%;
+        min-height:100px;
+        background: #000;
+}
+
+/* overlay starting  */
+
+.overlay{
+        position: fixed;
+        height: 50vw;
+        width:100vw;
+        background: none;
+        z-index: 1060;
+        /* animation-name: fadeAway; */
+        /* animation-delay:0s;
+        opacity: 0;
+        animation-duration: 3s; */
+        /* display: none; */
+}
+@keyframes fadeAway{
+    0%   {opacity: 1;display: block}
+    /* 25%  {top: 200px;} */
+    50%  {opacity: .5;}
+    /* 75%  {top: 200px;} */
+    100% {opacity: 0;display:none;}
+}
+.line{
+        position: absolute;
+        top:0%;
+        bottom:0%;
+        min-width:2px;
+        min-height:1px ;
+        background: #fff;
+        left: 50%;
+        animation-name: lineCover ;
+        animation-duration: 1s;
+        opacity: 1;
+        z-index: 1062;
+}
+@keyframes lineCover{
+    0%   {top: 50%;bottom:50%;}
+    /* 25%  {top: 200px;} */
+    50%  {top: 40%;bottom:40%;}
+    /* 75%  {top: 200px;} */
+    100% {top: 0%;bottom:0%;}
+}
+.leftBox{
+        position: absolute;
+        left:0;
+        top:0;
+        bottom:0;
+        background: #000;
+        right:100%;
+        animation-name: leftBoxMove ;
+        animation-duration: 1s;
+        animation-delay: 1s;
+        z-index: 1065;
+}
+.rightBox{
+        position: absolute;
+        left:100%;
+        top:0;
+        bottom:0;
+        background: #000;
+        right:0%;
+        animation-name: rightBoxMove ;
+        animation-duration: 1s;
+        animation-delay: 1s;
+}
+@keyframes leftBoxMove{
+        0%   {right: 50%;}
+        /* 25%  {top: 200px;} */
+        50%  {right: 65%;}
+        /* 75%  {top: 200px;} */
+        100% {right: 100%;}
+}
+@keyframes rightBoxMove{
+        0%   {left: 50%;}
+        /* 25%  {top: 200px;} */
+        50%  {left: 65%;}
+        /* 75%  {top: 200px;} */
+        100% {left: 100%;}
+}
